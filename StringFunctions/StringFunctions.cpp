@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdio.h>
 #include<string>
+//#include<pch.h>
 #include<string.h>
 using namespace std;
 int input;
@@ -34,12 +35,15 @@ string strcpy(string s1,string s2)
 		return s2;
 }
 
-string strcat(string s1,string s2)
+char* strcat(char *s1,char* s2)
 {
-	int length = s1.length();
 	int i = 0;
-	while (i < s2.length())
-		s1[length++] = s2[i++];
+	for (i = 0; s1[i] != '\0'; i++)
+		continue;
+	for (int j = 0; s2[j] != '\0'; j++)
+		s1[i++] = s2[j];
+	s1[i] = '\0';
+	realloc(s1, strlen(s1) + strlen(s2));
 	return s1;
 }
 
@@ -98,20 +102,24 @@ int main()
 			getline(cin, s1);
 			cout << "Enter 2nd string\n";
 			getline(cin, s2);
-			cout << "Copying String 1 to String 2\nString 2 after Copying:"<<strcat(s1,s2)<<"\n";
+			cout << "Copying String 1 to String 2\nString 2 after Copying:"<<strcpy(s1,s2)<<"\n";
 			cout << "\n";
 			continue;
 		}
 
 		if (input == 4)
 		{
-			string s1, s2;
-			cout << "Enter 1st string\n";
-			cin.ignore();
-			getline(cin, s1);
+			char *s1=  new char[10];
+			char *s2 = new char[5];
+			cout<<"Enter 1st string\n";
+			cin >> s1;
 			cout << "Enter 2nd string\n";
-			getline(cin, s2);
-			cout << "Concatenating String 1 to String 2\nString 1 after Concatenating is:" << strcpy(s1, s2) << "\n";
+			cin >> s2;
+			cout << "String after concatenation is:";
+			strcat(s1,s2);
+			int i = 0;
+			while (s1[i]!= '\0')
+				cout << s1[i++];
 			cout << "\n";
 			continue;
 		}
