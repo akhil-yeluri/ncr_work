@@ -24,6 +24,24 @@ int strcmp(string s1,string s2)
 	return 0;
 }
 
+string strcpy(string s1,string s2)
+{
+	int i;
+	for (i = 0; i <= s1.length(); i++)
+		s2[i] = s1[i]; 
+	while (i < s2.length())
+		s2[i++] = '\0';
+		return s2;
+}
+
+string strcat(string s1,string s2)
+{
+	int length = s1.length();
+	int i = 0;
+	while (i < s2.length())
+		s1[length++] = s2[i++];
+	return s1;
+}
 
 string strrev(string s)
 {
@@ -48,7 +66,7 @@ int main()
 		cin >> input;
 		if (input == 1)
 		{
-			string s1 = "", s2 = "";
+			string s1 , s2 ;
 			cout << "Enter 1st string\n";
 			cin.ignore();
 			getline(cin, s1);
@@ -58,6 +76,7 @@ int main()
 				cout << "Given Strings are equal\n";
 			else
 				cout << "Unequal strings\n";
+			cout << "\n";
 			continue;
 		}
 
@@ -73,7 +92,28 @@ int main()
 		}
 		if (input == 3)
 		{
+			string s1, s2;
+			cout << "Enter 1st string\n";
+			cin.ignore();
+			getline(cin, s1);
+			cout << "Enter 2nd string\n";
+			getline(cin, s2);
+			cout << "Copying String 1 to String 2\nString 2 after Copying:"<<strcat(s1,s2)<<"\n";
+			cout << "\n";
+			continue;
+		}
 
+		if (input == 4)
+		{
+			string s1, s2;
+			cout << "Enter 1st string\n";
+			cin.ignore();
+			getline(cin, s1);
+			cout << "Enter 2nd string\n";
+			getline(cin, s2);
+			cout << "Concatenating String 1 to String 2\nString 1 after Concatenating is:" << strcpy(s1, s2) << "\n";
+			cout << "\n";
+			continue;
 		}
 
 		else
