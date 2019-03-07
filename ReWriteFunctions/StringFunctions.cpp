@@ -109,8 +109,8 @@ int main()
 
 		if (input == 4)
 		{
-			char *s1 = new char[10];
-			char *s2 = new char[5];
+			char *s1 = new char[50];
+			char *s2 = new char[50];
 			cout << "Enter 1st string\n";
 			cin >> s1;
 			cout << "Enter 2nd string\n";
