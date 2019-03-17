@@ -6,7 +6,8 @@ int print(char a,char b)
 {
 	if (a > b)
 	{
-		cout << "Invalid expression";
+		cout << "Invalid expression\nPress any key to exit";
+		getchar();
 		return 0;
 	}
 	while (a <= b) {
@@ -19,6 +20,7 @@ int print(char a,char b)
 int main()
 {
 	string input;
+	int i;
 	cout << "enter an expression\n";
 	getline(cin, input);
 	int length = input.length();
@@ -30,7 +32,7 @@ int main()
 		return 0;
 	}
 
-	for(int i=2;i<length;i++)
+	for(i=2;i<length;i++)
 		if(input[i]=='-' && (input[i-2]=='-' || input[i-1]=='-'))
 		{
 			cout << "Invalid Expression\nPress any key to exit";
@@ -39,7 +41,7 @@ int main()
 		}
 	
 
-	for (int i = 0; i<length; i++)
+	for ( i = 0; i<length-1; i++)
 		if (input[i] == '-' && input[i + 1] != '\0')
 		{
 			if(!print(input[i - 1], input[i+ 1]))
@@ -49,9 +51,10 @@ int main()
 		}
 		else
 		{
-			if (input[i] != '-' )
+			if (input[i] != '-' && input[i+1]!='-')
 				cout << input[i];
 		}
+	cout << input[i];
 
 	int n;
 	cin >> n;

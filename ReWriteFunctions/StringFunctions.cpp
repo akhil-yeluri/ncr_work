@@ -28,7 +28,7 @@ int strcmp(string s1,string s2)
 string strcpy(string s1,string s2)
 {
 	int i;
-	for (i = 0; i <= s1.length(); i++)
+	for (i = 0; i <= s2.length(); i++)
 		s2[i] = s1[i]; 
 	while (i < s2.length())
 		s2[i++] = '\0';
@@ -64,13 +64,13 @@ string strrev(string s)
 
 int main()
 {
-	while (1)
-	{
+
+	while (1) {
 		cout << "Enter your choice\n1.check string equality\n2.Reverse a String\n3.String Copy\n4.String Concatenate\n";
 		cin >> input;
 		if (input == 1)
 		{
-			string s1 , s2 ;
+			string s1, s2;
 			cout << "Enter 1st string\n";
 			cin.ignore();
 			getline(cin, s1);
@@ -90,7 +90,7 @@ int main()
 			cout << "enter string that needs to be reversed\n";
 			cin.ignore();
 			getline(cin, s);
-			cout << "String after reverse is :"<<strrev(s)<<endl;
+			cout << "String after reverse is :" << strrev(s) << endl;
 			cout << "\n";
 			continue;
 		}
@@ -102,31 +102,35 @@ int main()
 			getline(cin, s1);
 			cout << "Enter 2nd string\n";
 			getline(cin, s2);
-			cout << "Copying String 1 to String 2\nString 2 after Copying:"<<strcpy(s1,s2)<<"\n";
+			cout << "Copying String 1 to String 2\nString 2 after Copying:" << strcpy(s1, s2) << "\n";
 			cout << "\n";
 			continue;
 		}
 
 		if (input == 4)
 		{
-			char *s1=  new char[10];
-			char *s2 = new char[5];
-			cout<<"Enter 1st string\n";
+			char *s1 = new char[50];
+			char *s2 = new char[50];
+			cout << "Enter 1st string\n";
 			cin >> s1;
 			cout << "Enter 2nd string\n";
 			cin >> s2;
 			cout << "String after concatenation is:";
-			strcat(s1,s2);
+			strcat(s1, s2);
 			int i = 0;
-			while (s1[i]!= '\0')
+			while (s1[i] != '\0')
 				cout << s1[i++];
 			cout << "\n";
+			delete s1, s2;
 			continue;
 		}
 
 		else
+		{
+			cout << "Invalid Option\nPress any key to Exit\n";
+			getchar();
 			return 0;
-
+		}
 	}
    return 0;
 }
