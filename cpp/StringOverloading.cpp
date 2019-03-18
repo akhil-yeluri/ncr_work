@@ -49,7 +49,28 @@ public:
 	{
 		cout << s;
 	}
+
+	friend istream& operator >> (istream &cin, String &s);
+	friend ostream& operator<< (ostream &cout, String &s);
 };
+
+istream& operator >> (istream &in, String &object)
+{
+	cout << "Enter length of string\n";
+	cin >> object.length;
+	object.s = new char[object.length + 1];
+	cout << "Enter string\n";
+	cin >> object.s;
+	return in;
+}
+
+ostream& operator << (ostream &out, String &object)
+{
+	cout << "\nstring content is: ";
+	cout <<object.s<<endl;
+	return out;
+}
+
 
 int main()
 {
@@ -57,8 +78,13 @@ int main()
 	String s2("world",6);
 	String s3= s + s2;
 	//cout << s2[3];
-	s = s2;
-	s.display();
+	//s = s2;
+	//s.display();
+	String test;
+	cin >> test;
+	cout << test;
+	int n;
+	cin >> n;
 	getchar();
 	return 0;
 }
