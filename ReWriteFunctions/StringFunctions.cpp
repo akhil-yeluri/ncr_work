@@ -1,6 +1,7 @@
 #include<iostream>
 #include<stdio.h>
 #include<string>
+#define size 5000
 //#include<pch.h>
 #include<string.h>
 using namespace std;
@@ -27,11 +28,7 @@ int strcmp(string s1,string s2)
 
 string strcpy(string s1,string s2)
 {
-	int i;
-	for (i = 0; i <= s2.length(); i++)
-		s2[i] = s1[i]; 
-	while (i < s2.length())
-		s2[i++] = '\0';
+		s2 = s1;
 		return s2;
 }
 
@@ -109,8 +106,8 @@ int main()
 
 		if (input == 4)
 		{
-			char *s1 = new char[50];
-			char *s2 = new char[50];
+			char *s1 = new char[size];
+			char *s2 = new char[size];
 			cout << "Enter 1st string\n";
 			cin >> s1;
 			cout << "Enter 2nd string\n";
