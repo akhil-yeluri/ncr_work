@@ -45,17 +45,40 @@ public:
 		}
 	}
 
+
 	
 };
 
 
 
+class complex
+{
+	int real, imaginary;
+public:
+	complex()
+	{
+		real = imaginary = 0;
+	}
 
+	complex(int realIp,int imaginaryIp)
+	{
+		real = realIp;
+		imaginary = imaginaryIp;
+	}
+
+	friend ostream & operator << (ostream &out, complex &object);
+};
+
+ostream & operator << (ostream &out, complex &object)
+{
+	cout << "real value is "<<object.real <<"Imaginary value is "<<object.imaginary<<endl;
+	return out;
+}
 
 int main()
 {
 	int choice;
-	cout << "Choose the stack type\n1.INTEGER\n2.FLOAT\n3.DOUBLE\n4.CHARACTER\n";
+	cout << "Choose the stack type\n1.INTEGER\n2.FLOAT\n3.DOUBLE\n4.CHARACTER\n5.Complex Class\n";
 	cin >> choice;
  
 	if (choice == 1)
@@ -175,6 +198,36 @@ int main()
 			default:cout << "Invalid Option";
 				break;
 			}
+		}
+	}
+
+	if (choice == 5)
+	{
+		int stackSize;
+		cout << "Enter size of stack\n";
+		cin >> stackSize;
+		Stack<complex> ComplexStack;
+		ComplexStack.setSize(stackSize);
+		while (1)
+		{
+			cout << "Enter your choice\n1.push into stack\n2.pop from stack\n";
+			cin >> choice;
+			if (choice == 1) 
+			{
+				int real, imaginary;
+				cout << "enter real and imaginary\n";
+				cin >> real >> imaginary;
+				complex c(real, imaginary);
+				ComplexStack.push(c);
+			}
+
+			if(choice==2)
+				ComplexStack.pop();
+		
+
+			
+			
+			
 		}
 	}
 	else
