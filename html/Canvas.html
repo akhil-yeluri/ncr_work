@@ -1,0 +1,40 @@
+<html>
+<body>
+<canvas id="Canvas" height="500" width="300" style="border:1px solid;">
+</canvas>
+<script>
+window.onload=function()
+{
+var canvas2 = document.getElementById('Canvas');
+   var context = canvas2.getContext('2d');
+   canvas2.width = 780;
+   canvas2.height = 490;
+   context.strokeStyle = "#00000";
+   context.lineWidth = 2;
+   canvas2.onmousedown = startDrawing;
+   canvas2.onmouseup = stopDrawing;
+   canvas2.onmousemove = draw;
+ 
+   function startDrawing(e) {
+      isDrawing = true;
+      context.beginPath();
+      context.moveTo(e.pageX - canvas2.offsetLeft, e.pageY - canvas2.offsetTop);
+   }
+   
+   function draw(e) {
+      if (isDrawing == true) {
+         var x = e.pageX - canvas2.offsetLeft;
+         var y = e.pageY - canvas2.offsetTop;
+      
+         context.lineTo(x, y);
+         context.stroke();
+      }
+   }
+   
+   function stopDrawing() {
+      isDrawing = false;
+   }
+ }
+</script>
+</body>
+</html>

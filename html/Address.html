@@ -1,0 +1,61 @@
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script><script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+
+
+
+
+
+<html>
+<body>
+House Number:<input type="text" id="hno"/>
+</br>
+Street      :<input type="text" id="street"/>
+</br>
+Landmark    :<input type="text" id="landmark"/>
+</br>
+State       :<input type="text" id="state"/>
+</br>
+Permanent and Temporary address are same<input type="checkbox" id="checkbx"/>
+</br>
+House Number:<input type="text" id="hno2"/>
+</br>
+Street      :<input type="text" id="street2"/>
+</br>
+Landmark    :<input type="text" id="landmark2"/>
+</br>
+State       :<input type="text" id="state2"/>
+</br>
+<button id="btn">click</button>
+
+
+<script>
+$(document).ready(function(){
+
+alert("DOM loaded");
+});
+
+$("#checkbx").click(function(){
+
+alert("sdr");
+$("#hno2").val($("#hno").val());
+$("#street2").val($("#street").val());
+$("#landmark2").val($("#landmark").val());
+$("#state2").val($("#state").val());
+});
+
+
+$("#btn").click(function(){
+
+alert("button clicked");
+});
+</script>
+
+
+</body>
+</html>

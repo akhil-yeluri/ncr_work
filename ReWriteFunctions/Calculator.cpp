@@ -115,8 +115,14 @@ int main()
 				break;
 			case '*': stck2.push(a * b);
 				break;
-			case '/': stck2.push(b/a);
-				break;
+			case '/': if (a == 0)
+				{
+					cout << "Divide by zero error\nTerminating program press any key to exit\n";
+					getchar();
+					return 0;
+				}
+					  stck2.push(b/a);
+					   break;
 			}
 		}
 

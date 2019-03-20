@@ -1,0 +1,26 @@
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script><script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+
+<html>
+<body>
+TEXT1:<input type="text" id="txt1"/>
+</br>
+PARAGRAPH:-<p id="para">hello world</p>
+
+
+<script>
+
+$("#txt1").change(function(){
+$("#para").html($("#para").html() + $("#txt1").val());
+});
+</script>
+
+
+</body>
+</html>

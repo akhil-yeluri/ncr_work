@@ -1,0 +1,14 @@
+<html>
+<body style="background-color:green">
+Please Upload a File
+<input type="file" id="filepath" onchange="changeevent()"/>
+<script>
+function changeevent()
+{
+var size=document.getElementById('filepath');
+var size2=size.files[0].size;
+alert(size2);
+}
+</script>
+</body>
+</html>

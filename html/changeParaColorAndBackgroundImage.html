@@ -1,0 +1,28 @@
+<html>
+<body id="bod">
+<p id="pa"> Welcome to CDAC </p>
+</br>
+<button onclick="changecolor()">
+change color of text
+</button>
+
+</br>
+
+<button onclick="changeImage()">
+change background image
+</button>
+<script>
+
+function changecolor(){
+var paragraph=document.getElementById('pa');
+paragraph.style.color="green";
+}
+
+function changeImage(){
+var bodi=document.getElementById('bod');
+document.body.style.backgroundImage="url('hello.jpg')";
+}
+
+</script>
+</body>
+</html>
