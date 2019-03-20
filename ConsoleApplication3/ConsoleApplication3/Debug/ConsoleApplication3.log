@@ -1,0 +1,5 @@
+﻿  StringFunctions.cpp
+c:\users\cdac\desktop\ncr_work\rewritefunctions\stringfunctions.cpp(16): warning C4018: '<': signed/unsigned mismatch
+c:\users\cdac\desktop\ncr_work\rewritefunctions\stringfunctions.cpp(67): warning C4018: '<=': signed/unsigned mismatch
+  ConsoleApplication3.vcxproj -> C:\Users\cdac\Desktop\ConsoleApplication3\Debug\ConsoleApplication3.exe
+  ConsoleApplication3.vcxproj -> C:\Users\cdac\Desktop\ConsoleApplication3\Debug\ConsoleApplication3.pdb (Full PDB)

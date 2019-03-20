@@ -12,6 +12,7 @@ int main()
 
 	stack<char> stck;
 	int i = 0;
+	//infix to postfix conversion
 	while (s[i] != '\0')
 	{
 		if (s[i] != '+' && s[i] != '-' && s[i] != '/' && s[i] != '*' && s[i] != '(' && s[i] != ')') {
@@ -99,6 +100,7 @@ int main()
 	}
 	//cout << output;
 	i = 0;
+	//postfix evaluation
 	stack<int> stck2;
 	while (output[i] != '\0')
 	{
@@ -130,6 +132,7 @@ int main()
 			stck2.push((int)output[i] - '0');
 		i++;
 	}
+	//final result
 	cout<<"\n"<< stck2.top();
 	getchar();
 	return 0;
